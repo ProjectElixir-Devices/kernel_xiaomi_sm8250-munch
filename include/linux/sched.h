@@ -1509,6 +1509,7 @@ struct task_struct {
 	/* Used by LSM modules for access restriction: */
 	void				*security;
 #endif
+
 #if IS_ENABLED(CONFIG_KPERFEVENTS)
 	/* lock to protect kperfevents */
 	rwlock_t kperfevents_lock;
@@ -1540,6 +1541,9 @@ struct task_struct {
 
 	ANDROID_KABI_RESERVE(7);
 	ANDROID_KABI_RESERVE(8);
+#ifdef CONFIG_ANDROID_SIMPLE_LMK
+	struct task_struct		*simple_lmk_next;
+#endif
 
 #if IS_ENABLED(CONFIG_PACKAGE_RUNTIME_INFO)
 struct package_runtime_info pkg;
