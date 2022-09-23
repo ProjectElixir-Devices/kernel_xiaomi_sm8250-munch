@@ -27,6 +27,7 @@ else
 DTB_LIST := $(dtb-y)
 endif
 DTB_OBJS := $(shell find $(obj)/dts/ -name \*.dtb)
+DTBO_OBJS := $(shell find $(obj)/dts/ -name \*.dtbo)
 
 DTBO_OBJS := $(shell find $(obj)/dts/ -name \*.dtbo)
 
